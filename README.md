@@ -1,2 +1,0 @@
-# Mizo-Chat
-
