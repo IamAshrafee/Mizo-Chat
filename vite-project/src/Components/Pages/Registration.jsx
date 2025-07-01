@@ -1,5 +1,4 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import RegistrationBanner from "../../assets/images/RegistrationBanner.png";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
@@ -41,12 +40,15 @@ const Registration = () => {
       }
     }
     if (!password) {
-      setPasswordError("Password is required");
+      // If password is empty or null
+      setPasswordError("Password is required"); // Show error message
     } else {
-      if (!password < 6) {
-        setPasswordError("Password be larger than 6");
+      if (password.length < 6) {
+        // If password is not empty but less than 6 characters
+        setPasswordError("Password must be at least 6 characters"); // Show error message
       }
     }
+
     if (!name) {
       setNameError("Name is required");
     }
@@ -134,7 +136,7 @@ const Registration = () => {
                       type="text"
                       id="fullname"
                       class="bg-red-50 border border-red-500 text-red-900 placeholder-red-700 text-base rounded-[8px] focus:ring-red-500 focus:border-red-500 block w-full p-2.5 "
-                      placeholder="example@gmail.com"
+                      placeholder="John doe"
                     />
                   </div>
                 )}
@@ -215,7 +217,7 @@ const Registration = () => {
               <div className="mt-[30px] w-full items-center flex justify-center">
                 <p className="font-nunito text-[16px] text-[#11175D]">
                   Already have an account?{" "}
-                  <a href="/login" className="text-yellow-500 font-bold">
+                  <a href="/Login" className="text-yellow-500 font-bold">
                     Log in
                   </a>
                 </p>
