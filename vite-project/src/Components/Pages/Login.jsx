@@ -227,7 +227,7 @@ const Login = () => {
                 <div className="mt-[30px] w-full items-center flex justify-center">
                   <p className="font-nunito text-[16px] text-[#11175D]">
                     don't have any account?{" "}
-                    <a href="/Registration" className="text-yellow-500 font-bold">
+                    <a href="/Home" className="text-yellow-500 font-bold">
                       Register Now
                     </a>
                   </p>

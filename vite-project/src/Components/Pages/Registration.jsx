@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 import RegistrationBanner from "../../assets/images/RegistrationBanner.png";
 import { FaEyeSlash } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+
 
 const Registration = () => {
   const [email, setEmail] = useState("");
@@ -51,6 +53,15 @@ const Registration = () => {
 
     if (!name) {
       setNameError("Name is required");
+    }
+
+    if (
+      email &&
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) &&
+      name &&
+      password.length >= 6
+    ) {
+      <Link to="/Login"></Link>
     }
   };
 
@@ -217,9 +228,9 @@ const Registration = () => {
               <div className="mt-[30px] w-full items-center flex justify-center">
                 <p className="font-nunito text-[16px] text-[#11175D]">
                   Already have an account?{" "}
-                  <a href="/Login" className="text-yellow-500 font-bold">
+                  <Link to="/Login" className="text-yellow-500 font-bold">
                     Log in
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
